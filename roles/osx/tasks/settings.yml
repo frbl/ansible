@@ -3,47 +3,47 @@
 # Use `defaults read` to dump out the current settings.
 
 - name: disable sound on boot
-  sudo: yes
+  become: yes
   command: nvram SystemAudioVolume=" "
 
 - name: enable tap-to-click
-  sudo: yes
+  become: yes
   command: defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 
 - name: enable display zooming
-  sudo: yes
+  become: yes
   command: defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 
 - name: set ctrl+shift+scroll to zoom
-  sudo: yes
+  become: yes
   command: defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 393216
 
 - name: show all filename extensions
-  sudo: yes
+  become: yes
   command: defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 - name: show the ~/Library folder
-  sudo: yes
+  become: yes
   command: chflags nohidden ~/Library
 
 - name: don’t automatically rearrange Spaces based on most recent use
-  sudo: yes
+  become: yes
   command: defaults write com.apple.dock mru-spaces -bool false
 
 - name: automatically hide and show the Dock
-  sudo: yes
+  become: yes
   command: defaults write com.apple.dock autohide -bool true
 
 - name: set the default dock size to fairly large
-  sudo: yes
+  become: yes
   command: defaults write com.apple.dock largesize -int 90
 
 - name: speed up window resize animations
-  sudo: yes
+  become: yes
   command: defaults write -g NSWindowResizeTime -float 0.001
 
 - name: significantly speed up expose (skip animation)
-  sudo: yes
+  become: yes
   command: defaults write com.apple.dock expose-animation-duration -int 0
   notify:
     - restart the dock

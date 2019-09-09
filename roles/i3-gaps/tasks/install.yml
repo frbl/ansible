@@ -10,7 +10,7 @@
 - name: ensure git parent path exists
   file:
     path: "{{ i3_gaps_git_path | dirname }}"
-    state: directory
+    state: directory 
     mode: 0755
 
 - name: fetch i3-gaps latest version

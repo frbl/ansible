@@ -7,4 +7,4 @@
     - { role: osx, when: ansible_distribution == "MacOSX" }
     - { role: x11, when: ansible_distribution != "MacOSX" }
     - { role: xfce, when: ansible_distribution != "MacOSX" }
-    - { role: i3-gaps-ppa, when: ansible_distribution != "MacOSX" }
+    - { role: i3-gaps, when: ansible_distribution != "MacOSX" }

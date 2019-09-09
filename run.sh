@@ -10,4 +10,5 @@ then
 fi
 
 #ansible workstations -m ping -i hosts --ask-pass --extra-vars "ansible_python_interpreter=/usr/bin/python3"
-ansible-playbook --ask-pass -K -i hosts workstations.yml
+#ansible-playbook --ask-pass -K -i hosts workstations.yml
+ansible-playbook -K -i hosts workstations.yml

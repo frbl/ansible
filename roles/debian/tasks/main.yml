@@ -1,7 +1,7 @@
 ---
 
 - name: set up user groups
-  sudo: yes
+  become: yes
   user:
     append: yes
     groups: staff
@@ -9,11 +9,11 @@
   when: ansible_os_family == "Debian"
 
 - name: install a better shell
-  sudo: yes
+  become: yes
   apt: name=zsh state=present
 
 - name: change shell to zsh
-  sudo: yes
+  become: yes
   user:
     name: '{{ansible_user_id}}'
     shell: /bin/zsh
