@@ -1,0 +1,8 @@
+---
+
+- name: Set authorized key
+  authorized_key:
+    user: frbl
+    state: present
+    key: https://github.com/frbl.keys
+    validate_certs: True
