@@ -1,4 +1,4 @@
 ---
 - name: restart the dock
-  sudo: yes
+  become: yes
   command: killall Dock

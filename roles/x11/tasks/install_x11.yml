@@ -1,27 +1,28 @@
 ---
 - name: install x11
   when: ansible_os_family == "Debian"
-  sudo: yes
+  become: yes
   apt: name="xorg" state=latest
 
 - name: add contrib and non-free
-  sudo: yes
+  become: yes
   apt_repository:
     state: present
     repo: 'deb http://ftp.us.debian.org/debian/ buster main contrib non-free'
 
 - name: install x11 packages packages
-  sudo: yes
+  become: yes
   when: ansible_os_family == "Debian"
-  apt: name="{{item}}" state=latest
-  with_items:
-    - dmenu
-    - gnuplot
-    - libxosd-dev
-    - rxvt-unicode
-    - spectrwm
-    - xclip
-    - xfonts-terminus
-    - xosd-bin
-    - xsel
-    - xvkbd
+  apt: 
+    state: present
+    pkg:
+      - dmenu
+      - gnuplot
+      - libxosd-dev
+      - rxvt-unicode
+      - spectrwm
+      - xclip
+      - xfonts-terminus
+      - xosd-bin
+      - xsel
+      - xvkbd

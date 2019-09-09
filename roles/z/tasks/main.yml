@@ -1,0 +1,8 @@
+---
+
+- name: Install Z
+  get_url:
+    url: https://raw.githubusercontent.com/rupa/z/master/z.sh
+    dest: "{{ z_path }}"
+    mode: '0700'
+

@@ -1,6 +1,6 @@
 - name: install xfce4 minimal packages
   when: ansible_os_family == "Debian"
-  sudo: yes
+  become: yes
   apt:
     state: present
     pkg:
@@ -11,5 +11,5 @@
 
 - name: restart login manager service
   when: ansible_os_family == "Debian"
-  sudo: yes
+  become: yes
   service: name="gdm" state="restarted"

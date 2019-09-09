@@ -8,3 +8,6 @@
     - { role: x11, when: ansible_distribution != "MacOSX" }
     - { role: xfce, when: ansible_distribution != "MacOSX" }
     - { role: i3-gaps, when: ansible_distribution != "MacOSX" }
+    - R
+    - vscode
+    - z

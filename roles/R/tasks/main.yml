@@ -1,0 +1,27 @@
+---
+- name: ensure R dependencies are installed
+  become: yes
+  apt:
+    state: present
+    pkg: 
+    - software-properties-common
+    - dirmngr
+
+- name: Add the R apt key
+  become: yes
+  apt_key:
+    keyserver: keys.gnupg.net
+    id: E19F5F87128899B192B1A2C2AD5F960A256A04AF
+
+- name: Add the R apt repo
+  become: yes
+  apt_repository:
+    repo: deb http://cloud.r-project.org/bin/linux/debian buster-cran35/
+    state: present
+
+- name: install R
+  become: yes
+  apt:
+    state: present
+    pkg: 
+    - r-base

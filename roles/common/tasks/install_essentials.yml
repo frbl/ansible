@@ -1,10 +1,13 @@
 ---
-- name: install sudo (Debian)
+- name: Install sudo
   become: yes
   become_method: su
   become_user: root
   when: ansible_os_family == "Debian"
-  apt: name=sudo state=present
+  apt: 
+    state: present
+    pkg:
+      - sudo
 
 - name: Make sure we have a 'wheel' group
   become: yes
@@ -45,9 +48,13 @@
       - figlet
       - htop
       - pandoc
+      - pandoc-citeproc
       - texlive
+      - texlive-full
+      - latexmk 
       - tree
       - nmap
+      - ctags
       - gconf2
       - poppler-utils
       - pdftk
@@ -76,7 +83,6 @@
       - compton
       - silversearcher-ag
       - tmux
-      - zsh
       - snapd
       - libcurl4-openssl-dev
       - libxml2-dev
@@ -87,8 +93,13 @@
       - zlib1g-dev
       - liblzma-dev
       - chromium
+      - chromium-driver
+      - nfs-kernel-server
       #- signal-desktop
       #- code
+      #- owncloud-client
+      # - build-dep vagrant ruby-libvirt \
+      # - libxslt-dev libxml2-dev libvirt-dev zlib1g-dev ruby-dev \
 
 - name: install essentials (OSX)    
   when: ansible_distribution == "MacOSX"
