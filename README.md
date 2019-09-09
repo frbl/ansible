@@ -13,3 +13,5 @@ Running:
 - FZF
 - Dotfiles
 - Symlinks
+- NodeJS
+- RVM
