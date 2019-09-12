@@ -11,7 +11,5 @@ Running:
 - Vscode
 - Vagrant
 - FZF
-- Dotfiles
-- Symlinks
 - NodeJS
 - RVM
