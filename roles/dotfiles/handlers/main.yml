@@ -1,0 +1,13 @@
+---
+
+- name: reset dotfiles symlinks
+  command: ./install_symlinks.sh
+  args:
+    chdir: "{{ dotfiles_git_path }}"
+
+- name: setup doftiles repositories
+  command: ./install_repositories.sh
+  args:
+    chdir: "{{ dotfiles_git_path }}"
+
+

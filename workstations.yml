@@ -3,6 +3,7 @@
 - hosts: workstations
   roles:
     - common
+    - dotfiles
     - { role: debian, when: ansible_os_family == "Debian" }
     - { role: osx, when: ansible_distribution == "MacOSX" }
     - { role: x11, when: ansible_distribution != "MacOSX" }

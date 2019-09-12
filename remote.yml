@@ -1,5 +1,0 @@
----
-- hosts: remote
-  roles:
-    - common
-    
