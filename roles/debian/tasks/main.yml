@@ -17,3 +17,18 @@
   user:
     name: '{{ansible_user_id}}'
     shell: /bin/zsh
+
+- name: Cloning oh-my-zsh
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh
+    dest: ~/.oh-my-zsh
+    clone: True
+    force: True
+    recursive: True
+    update: True
+    depth: 1
+    
+- name: turn off sleep
+  become: yes
+  command: "systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target"
+

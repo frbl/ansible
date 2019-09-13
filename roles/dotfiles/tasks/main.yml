@@ -3,6 +3,11 @@
 - name: ensure dotfiles git parent path exists
   file:
     path: "{{ dotfiles_git_path | dirname }}"
+    state: absent 
+
+- name: ensure dotfiles git parent path exists
+  file:
+    path: "{{ dotfiles_git_path | dirname }}"
     state: directory 
     mode: 0755
 
@@ -13,6 +18,7 @@
     clone: True
     recursive: True
     update: True
+    depth: 1
   notify:
     - setup dotfiles symlinks
-    - setup doftiles repositories
+    - setup dotfiles repositories
