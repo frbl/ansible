@@ -1,0 +1,14 @@
+---
+- name: install essentials (OSX)    
+  homebrew:
+    state: present
+    pkg:
+      - ansible
+      - cowsay
+      - figlet
+      - fuzzy-find
+      - git
+      - pwgen
+      - sqlite
+      - tmux
+      - w3m

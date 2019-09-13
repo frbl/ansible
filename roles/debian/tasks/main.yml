@@ -6,11 +6,12 @@
     append: yes
     groups: staff
     name: '{{ansible_user_id}}'
-  when: ansible_os_family == "Debian"
 
 - name: install a better shell
   become: yes
-  apt: name=zsh state=present
+  apt: 
+    name: zsh 
+    state: present
 
 - name: change shell to zsh
   become: yes

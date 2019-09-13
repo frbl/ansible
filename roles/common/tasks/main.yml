@@ -1,5 +1,12 @@
 ---
+
 - include: install_essentials.yml
+
+- include_tasks: install_essentials_debian.yml
+  when: ansible_os_family == "Debian"
+
+- include_tasks: install_essentials_osx.yml
+  when: ansible_distribution == "MacOSX"
 
 - include: install_ssh_keys.yml
 

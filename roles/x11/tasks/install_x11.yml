@@ -2,7 +2,9 @@
 - name: install x11
   when: ansible_os_family == "Debian"
   become: yes
-  apt: name="xorg" state=latest
+  apt:
+    name: xorg 
+    state: latest
 
 - name: add contrib and non-free
   become: yes
