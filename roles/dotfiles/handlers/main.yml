@@ -9,5 +9,3 @@
   command: echo 'skipping' # ./install_repositories.sh
   args:
     chdir: "{{ dotfiles_git_path }}"
-
-

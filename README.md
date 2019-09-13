@@ -8,7 +8,6 @@ Running:
 ```
 
 ## TODO:
-- Vscode
 - Vagrant
 - FZF
 - NodeJS

@@ -17,6 +17,7 @@
   become: yes
   apt_repository:
     repo: deb http://cloud.r-project.org/bin/linux/debian buster-cran35/
+    filename: rbase
     state: present
 
 - name: install R

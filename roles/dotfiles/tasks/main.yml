@@ -3,11 +3,6 @@
 - name: ensure dotfiles git parent path exists
   file:
     path: "{{ dotfiles_git_path | dirname }}"
-    state: absent 
-
-- name: ensure dotfiles git parent path exists
-  file:
-    path: "{{ dotfiles_git_path | dirname }}"
     state: directory 
     mode: 0755
 

@@ -6,3 +6,24 @@
     state: present
     key: https://github.com/frbl.keys
     validate_certs: True
+
+# Get the key by running
+# ssh-keyscan -H -t rsa <url>
+- name: Add github to known host
+  known_hosts:
+    path: "{{ lookup('env','HOME') }}/.ssh/known_hosts"
+    name: github.com
+    key: "|1|uh2R/cWbYW60AIw0ks7t7MDnIr4=|gPe0T5Bh3bEiI0+aEbDU6KoZF1U= ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=="
+
+- name: Add gitlab to known host
+  known_hosts:
+    path: "{{ lookup('env','HOME') }}/.ssh/known_hosts"
+    name: gitlab.com
+    key: "|1|xEE3KO/o4o+KrI6DiDfkzQzpyAc=|UEuhogjj5L0twqdfsKwY3alXW40= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsj2bNKTBSpIYDEGk9KxsGh3mySTRgMtXL583qmBpzeQ+jqCMRgBqB98u3z++J1sKlXHWfM9dyhSevkMwSbhoR8XIq/U0tCNyokEi/ueaBMCvbcTHhO7FcwzY92WK4Yt0aGROY5qX2UKSeOvuP4D6TPqKF1onrSzH9bx9XUf2lEdWT/ia1NEKjunUqu1xOB/StKDHMoX4/OKyIzuS0q/T1zOATthvasJFoPrAjkohTyaDUz2LN5JoH839hViyEG82yB+MjcFV5MU3N1l1QL3cVUCh93xSaua1N85qivl+siMkPGbO5xR/En4iEY6K2XPASUEMaieWVNTRCtJ4S8H+9"
+
+- name: Add gitlab.roqua.nl to known hosts
+  known_hosts:
+    path: "{{ lookup('env','HOME') }}/.ssh/known_hosts"
+    name: gitlab.roqua.nl
+    key: "|1|XZwRdl0eF05IpuHi9gdFfCJdC9I=|OdkZBC5M0AkupXGct9liexcDeb4= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDPUHOPELi0ApfOmIuCth3yVcTZaHG5ukgKpP5PY1gn0jXSGIGfvTJjvaZpigWOhtaEfR4lPUyjrU6odckFFlmjq+9n1vHySCZuMydMO0XtHwFGUhUi3ow1de7V/2yE5rBMvgw+hRGQAU3i2lAXDHa0wp8/5n1HbPj+1PSIRglzVMnyh4iQoJBNlNj73Z92+056kjdsV/AOxd75men9nPE1FzRxqEBqa644IpAB+5B165xbtmW2c/bmZzxCdRtky8qhOGuEZzsbPUxfwCX9zC7pgAhy2YS4Y6V461dlGuXWDUtT0U01BBNuHIMbuRKgOymipL//trXIMPjg6yMiH999"
+

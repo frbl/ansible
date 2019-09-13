@@ -104,15 +104,14 @@
 - name: install essentials (OSX)    
   when: ansible_distribution == "MacOSX"
   homebrew:
-    name: "{{item}}"
     state: present
-  with_items:
-    - ansible
-    - cowsay
-    - figlet
-    - fuzzy-find
-    - git
-    - pwgen
-    - sqlite
-    - tmux
-    - w3m
+    pkg:
+      - ansible
+      - cowsay
+      - figlet
+      - fuzzy-find
+      - git
+      - pwgen
+      - sqlite
+      - tmux
+      - w3m
