@@ -1,14 +1,4 @@
 ---
-- name: Install sudo
-  become: yes
-  become_method: su
-  become_user: root
-  apt: 
-    force_apt_get: True
-    state: present
-    pkg:
-      - sudo
-
 - name: install essentials (Debian)
   become: yes
   apt:

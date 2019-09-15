@@ -10,7 +10,8 @@
   become: yes
   apt_repository:
     state: present
-    repo: 'deb http://ftp.us.debian.org/debian/ buster main contrib non-free'
+    filename: nonfree
+    repo: deb http://ftp.us.debian.org/debian/ buster main contrib non-free
 
 - name: install x11 packages packages
   become: yes

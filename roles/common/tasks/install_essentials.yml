@@ -1,4 +1,14 @@
 ---
+- name: Install sudo
+  become: yes
+  become_method: su
+  become_user: root
+  apt: 
+    force_apt_get: True
+    state: present
+    pkg:
+      - sudo
+
 - name: Make sure we have a 'wheel' group
   become: yes
   become_method: su
@@ -23,3 +33,11 @@
   become_method: su
   become_user: root
   user: name="{{user_name}}" groups=wheel append=yes state=present createhome=yes
+
+- name: reset ssh connection to allow user changes to affect 'current login user'
+  meta: reset_connection
+
+- name: turn off sleep
+  when: ansible_os_family == "Debian"
+  become: yes
+  command: "systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target"

@@ -1,5 +1,5 @@
 ---
 
 has_root: true
-install_git_homedir: false
+connect: local
 

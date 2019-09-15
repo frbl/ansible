@@ -29,7 +29,4 @@
     update: True
     depth: 1
     
-- name: turn off sleep
-  become: yes
-  command: "systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target"
 

@@ -1,9 +1,8 @@
 #!/bin/sh
 
 # bootstrap debian on a LOCAL host
-LOCAL_USER=${USER}
-
-echo "Installing sudo & ansible, and adding local user with su..."
-su -c 'apt-get install sudo ansible && usermod -a -G sudo ${LOCAL_USER}'
-
-echo "Note: you will need to log back in for the group change to take effect."
+sudo apt-get install -y software-properties-common
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install -y ansible
