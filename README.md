@@ -8,7 +8,7 @@ Running:
 ```
 
 ## TODO:
+- Docker
 - Vagrant
-- FZF
 - NodeJS
 - RVM
