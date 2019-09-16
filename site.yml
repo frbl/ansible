@@ -14,6 +14,7 @@
     - { role: xfce, when: ansible_distribution != "MacOSX" }
     - { role: i3-gaps, when: ansible_distribution != "MacOSX" }
     #- { role: rvm.ruby, when: ansible_distribution != "MacOSX" }
+    - { role: geerlingguy.docker, become: true }
     - R
     - vscode
     - z

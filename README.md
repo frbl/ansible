@@ -12,3 +12,4 @@ Running:
 - Vagrant
 - NodeJS
 - RVM
+- insync
