@@ -20,7 +20,7 @@
     state: directory
     mode: '0755'
 
-- name: ensure dotfiles is cloned
+- name: add the nordic theme for xfce
   git:
     repo: "https://github.com/EliverLara/Nordic"
     dest: "{{ ansible_env.HOME }}/.themes"
