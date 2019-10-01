@@ -4,15 +4,173 @@
   homebrew:
     state: present
     pkg:
-      # - ansible
-      # - cowsay
+      - ansible
+      - aom
+      - asciinema
+      - autoconf
+      - automake
+      - azure-cli
+      - cairo
+      - cask
+      - ccache
+      - cmake
+      - coreutils
+      - cscope
+      - ctags
+      - curl
+      - dep
+      - dependency-check
+      - drafter
+      - emacs
+      - ffmpeg
       - figlet
-      # - fuzzy-find
+      - fish
+      - flac
+      - fontconfig
+      - freetype
+      - frei0r
+      - fribidi
+      - fzf
+      - gcc
+      - gdbm
+      - gettext
+      - ghostscript
+      - giflib
       - git
-      # - ncdu
-      # - pwgen
+      - git-flow-avh
+      - git-lfs
+      - glib
+      - gmp
+      - gnu-getopt
+      - gnupg
+      - gnutls
+      - go
+      - gotop
+      - graphite2
+      - harfbuzz
+      - heroku
+      - heroku-node
+      - htop
+      - hugo
+      - icu4c
+      - ilmbase
+      - imagemagick
+      - irssi
+      - isl
+      - jenv
+      - jpeg
+      - jq
+      - jsonschema2pojo
+      - kubernetes-cli
+      - kubernetes-helm
+      - lame
+      - lazydocker
+      - leptonica
+      - libass
+      - libassuan
+      - libbluray
+      - libde265
+      - libevent
+      - libffi
+      - libgcrypt
+      - libgpg-error
+      - libheif
+      - libiconv
+      - libidn2
+      - libksba
+      - libmpc
+      - libogg
+      - libomp
+      - libpng
+      - libpqxx
+      - libsamplerate
+      - libsndfile
+      - libsoxr
+      - libssh2
+      - libtasn1
+      - libtiff
+      - libtool
+      - libunistring
+      - libusb
+      - libvorbis
+      - libvpx
+      - libxml2
+      - libxslt
+      - libyaml
+      - little-cms2
+      - llvm
+      - lua
+      - lzo
+      - midnight-commander
+      - mpfr
+      - mysql-connector-c
+      - ncurses
+      - nettle
+      - nmap
+      - npth
+      - nvm
+      - oniguruma
+      - opencore-amr
+      - openexr
+      - openjpeg
+      - openssl
+      - openssl@1.1
+      - operator-sdk
+      - opus
+      - p11-kit
+      - pandoc
+      - pcre
+      - pcre2
+      - perl
+      - pinentry
+      - pipenv
+      - pixman
+      - pkg-config
+      - postgresql
+      - pyenv
+      - pyenv-virtualenv
+      - python
+      - python@2
+      - ranger
+      - readline
+      - reattach-to-user-namespace
+      - rtmpdump
+      - rubberband
+      - ruby
+      - s-lang
+      - sbt
+      - scala
+      - sdl2
+      - shared-mime-info
+      - shellcheck
+      - shfmt
+      - slackcat
+      - snappy
+      - speex
+      - sqlite
+      - sshuttle
+      - swagger-codegen
+      - swagger-codegen@2
+      - swig
+      - tesseract
+      - the_silver_searcher
+      - theora
       - tmux
-      # - w3m
+      - tmux-mem-cpu-load
+      - transmission
+      - transmission-cli
+      - tree
+      - unbound
+      - vim
+      - watch
+      - webp
+      - wget
+      - x264
+      - x265
+      - xvid
+      - xz
+      - z
+      - zsh
 
 - name: install homebrew cask
   homebrew:
@@ -23,24 +181,37 @@
   homebrew_cask:
     state: present
     pkg:
-      # - android-file-transfer
-      # - appcode
-      # - arduino
-      # - dropbox
-      # - flux
-      # - google-chrome
-      # - google-drive
-      # - hammerspoon
-      # - xquartz
-      # - inkscape
+      - adobe-acrobat-pro
+      - alacritty
+      - alfred
+      - anaconda
+      - gfortran
+      - google-chrome
+      - hyper
       - iterm2
-      # - moom
-      # - mou
-      # - osxfuse
-      # - pharo
-      # - slack
-      # - spotify
-      # - vlc
+      - java
+      - java8
+      - jetbrains-toolbox
+      - keybase
+      - kitematic
+      - kitty
+      - mactex
+      - minikube
+      - qutebrowser
+      - signal
+      - sizeup
+      - skim
+      - skype
+      - slack
+      - sourcetree
+      - spotify
+      - tableau-public
+      - the-unarchiver
+      - tunnelblick
+      - turtl
+      - vagrant
+      - virtualbox
+      - xquartz
 
 - name: install programming fonts
   homebrew_cask:
@@ -51,3 +222,6 @@
     # - font-droid-sans
     # - font-droid-sans-mono
   ignore_errors: yes
+
+
+
