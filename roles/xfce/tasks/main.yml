@@ -19,11 +19,12 @@
     path: "{{ ansible_env.HOME }}/.themes"
     state: directory
     mode: '0755'
+    recurse: yes
 
 - name: add the nordic theme for xfce
   git:
     repo: "https://github.com/EliverLara/Nordic"
-    dest: "{{ ansible_env.HOME }}/.themes"
+    dest: "{{ ansible_env.HOME }}/.themes/Nordic"
     clone: True
     force: True
     recursive: True
