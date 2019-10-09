@@ -33,3 +33,6 @@
   become: yes
   command: "systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target"
 
+- name: Increasing the amount of inotify watchers
+  become: yes
+  command: "echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p"
