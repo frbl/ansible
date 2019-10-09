@@ -24,6 +24,11 @@
   args:
     executable: /bin/bash
 
+- name: node 10
+  shell: "source {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install 10"
+  args:
+    executable: /bin/bash
+
 - name: install yarn (apt)
   become: yes
   apt:
