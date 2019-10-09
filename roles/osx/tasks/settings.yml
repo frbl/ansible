@@ -1,10 +1,9 @@
 ---
-
 # Use `defaults read` to dump out the current settings.
 
 - name: disable sound on boot
   become: yes
-  command: nvram SystemAudioVolume=" "
+  command: nvram SystemAudioVolume=""
 
 - name: enable tap-to-click
   become: yes
@@ -42,13 +41,16 @@
   become: yes
   command: defaults write -g NSWindowResizeTime -float 0.001
 
+- name: Auto refresh the contents of the file shown in skim
+  become: yes
+  command: defaults write -app Skim SKAutoReloadFileUpdate -boolean true
+
+- name: Not sure what this does
+  become: yes
+  command: defaults write -g ApplePressAndHoldEnabled -bool false
+
 - name: significantly speed up expose (skip animation)
   become: yes
   command: defaults write com.apple.dock expose-animation-duration -int 0
   notify:
     - restart the dock
-
-# TODO:
-# - name: dvorak keyboard layout
-# - name: replace capslock with left ctrl
-# - name: cmd-[0-9] switches spaces

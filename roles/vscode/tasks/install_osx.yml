@@ -1,0 +1,6 @@
+---
+- name: Install vscode
+  homebrew_cask:
+    state: present
+    pkg:
+      - visual-studio-code

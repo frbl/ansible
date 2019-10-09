@@ -64,3 +64,9 @@
     - configure i3-gaps
     - compile i3-gaps
     - install i3-gaps
+
+- name: make sure i3 status is installed
+  become: yes
+  apt:
+    state: present
+    name: i3status

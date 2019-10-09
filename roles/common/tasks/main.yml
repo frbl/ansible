@@ -9,11 +9,3 @@
   when: ansible_distribution == "MacOSX"
 
 - include: install_ssh_keys.yml
-
-# - include: cron_user.yml
-
-#- include: install_runit.yml
-#  when: has_root is defined
-  
-#- include: runit_user.yml
-#  when: has_runit is defined

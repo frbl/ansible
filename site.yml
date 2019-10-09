@@ -4,14 +4,19 @@
   roles:
     - common
     - dotfiles
+    - { role: m4rcu5nl.zerotier-one, become: true }
 
 - hosts: workstations
   roles:
+    - ssh
+    - node
     - { role: debian, when: ansible_os_family == "Debian" }
     - { role: osx, when: ansible_distribution == "MacOSX" }
     - { role: x11, when: ansible_distribution != "MacOSX" }
     - { role: xfce, when: ansible_distribution != "MacOSX" }
     - { role: i3-gaps, when: ansible_distribution != "MacOSX" }
+    #- { role: rvm.ruby, when: ansible_distribution != "MacOSX" }
+    - { role: geerlingguy.docker, become: true }
     - R
     - vscode
     - z

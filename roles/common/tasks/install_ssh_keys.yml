@@ -2,9 +2,9 @@
 
 - name: Set authorized key
   authorized_key:
-    user: frbl
+    user: "{{ ansible_user_id }}"
     state: present
-    key: https://github.com/frbl.keys
+    key: "https://github.com/{{ ansible_user_id }}.keys"
     validate_certs: True
 
 # Get the key by running

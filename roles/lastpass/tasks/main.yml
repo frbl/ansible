@@ -1,0 +1,25 @@
+---
+- name: ensure lastpass build dependencies are installed
+  become: yes
+  apt:
+    state: present
+    pkg:
+      - bash-completion
+      - build-essential
+      - cmake
+      - libcurl4
+      - libcurl4-openssl-dev
+      - libssl-dev
+      - libxml2
+      - libxml2-dev
+      - libssl1.1
+      - pkg-config
+      - ca-certificates
+      - xclip
+
+- name: install lastpass
+  become: yes
+  apt:
+    state: present
+    pkg:
+      - lastpass-cli

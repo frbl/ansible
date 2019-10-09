@@ -11,6 +11,7 @@
     repo: "{{ dotfiles_git_url }}"
     dest: "{{ dotfiles_git_path }}"
     clone: True
+    force: True
     recursive: True
     update: True
     depth: 1

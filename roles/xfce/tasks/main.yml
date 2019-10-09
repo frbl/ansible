@@ -13,3 +13,20 @@
   when: ansible_os_family == "Debian"
   become: yes
   service: name="gdm" state="restarted"
+
+- name: Create a directory if it does not exist
+  file:
+    path: "{{ ansible_env.HOME }}/.themes"
+    state: directory
+    mode: '0755'
+    recurse: yes
+
+- name: add the nordic theme for xfce
+  git:
+    repo: "https://github.com/EliverLara/Nordic"
+    dest: "{{ ansible_env.HOME }}/.themes/Nordic"
+    clone: True
+    force: True
+    recursive: True
+    update: True
+    depth: 1

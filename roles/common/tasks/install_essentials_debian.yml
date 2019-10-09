@@ -1,13 +1,17 @@
 ---
-- name: Install sudo
+- name: Cleanup and update
   become: yes
-  become_method: su
-  become_user: root
-  apt: 
-    force_apt_get: True
-    state: present
-    pkg:
-      - sudo
+  apt:
+    update_cache: yes
+    autoremove: yes
+    autoclean: yes
+    cache_valid_time: 3600
+
+- name: Upgrade all packages to the latest version
+  become: yes
+  apt:
+    name: "*"
+    state: latest
 
 - name: install essentials (Debian)
   become: yes
@@ -16,6 +20,7 @@
     pkg:
       - build-essential
       #- ansible
+      - xrdp
       - dirmngr
       - apt-transport-https
       - owncloud-client
