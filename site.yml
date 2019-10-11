@@ -18,5 +18,6 @@
     #- { role: rvm.ruby, when: ansible_distribution != "MacOSX" }
     - { role: geerlingguy.docker, become: true }
     - R
+    - google-cloud
     - vscode
     - z

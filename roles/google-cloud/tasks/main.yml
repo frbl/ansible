@@ -1,0 +1,27 @@
+---
+
+- name: install dependencies (apt)
+  become: yes
+  apt:
+    name:
+      - apt-transport-https
+    state: present
+
+- name: install key (apt)
+  become: yes
+  apt_key:
+    url: 'https://packages.cloud.google.com/apt/doc/apt-key.gpg'
+    state: present
+
+- name: install gcloud repo (apt)
+  become: yes
+  apt_repository:
+    repo: deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main
+    filename: googleclooud
+    state: present
+
+- name: install gcloud (apt)
+  become: yes
+  apt:
+    name: oogle-cloud-sdk
+    state: present
