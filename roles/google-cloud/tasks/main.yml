@@ -23,5 +23,6 @@
 - name: install gcloud (apt)
   become: yes
   apt:
+    update_cache: yes
     name: oogle-cloud-sdk
     state: present

@@ -2,6 +2,7 @@
 
 - hosts: all
   roles:
+    - google-cloud
     - common
     - dotfiles
     - { role: m4rcu5nl.zerotier-one, become: true }
@@ -18,6 +19,5 @@
     #- { role: rvm.ruby, when: ansible_distribution != "MacOSX" }
     - { role: geerlingguy.docker, become: true }
     - R
-    - google-cloud
     - vscode
     - z
