@@ -28,7 +28,13 @@
     recursive: True
     update: True
     depth: 1
-    
+
+- name: add contrib and non-free
+  become: yes
+  apt_repository:
+    state: present
+    filename: nonfree
+    repo: deb http://ftp.us.debian.org/debian/ buster main contrib non-free
 
 - name: Increasing the amount of inotify watchers
   become: yes

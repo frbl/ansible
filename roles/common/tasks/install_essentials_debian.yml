@@ -20,6 +20,7 @@
     pkg:
       - build-essential
       #- ansible
+      - firmware-iwlwifi
       - xrdp
       - dirmngr
       - apt-transport-https

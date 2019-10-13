@@ -17,6 +17,7 @@
     - { role: i3-gaps, when: ansible_distribution != "MacOSX" }
     #- { role: rvm.ruby, when: ansible_distribution != "MacOSX" }
     - { role: geerlingguy.docker, become: true }
+    - { role: kubectl, become: true }
     - R
     - vscode
     - z

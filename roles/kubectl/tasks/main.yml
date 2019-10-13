@@ -1,0 +1,26 @@
+---
+- name: install dependencies (apt)
+  become: yes
+  apt:
+    name:
+      - apt-transport-https
+    state: present
+
+- name: install key (apt)
+  become: yes
+  apt_key:
+    url: 'https://packages.cloud.google.com/apt/doc/apt-key.gpg'
+    state: present
+
+- name: install kubectl repo (apt)
+  become: yes
+  apt_repository:
+    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+    filename: kubernetes
+    state: present
+
+- name: install kubectl (apt)
+  become: yes
+  apt:
+    name: kubectl
+    state: present
