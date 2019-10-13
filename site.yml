@@ -2,6 +2,7 @@
 
 - hosts: all
   roles:
+    - google-cloud
     - common
     - dotfiles
     - { role: m4rcu5nl.zerotier-one, become: true }
