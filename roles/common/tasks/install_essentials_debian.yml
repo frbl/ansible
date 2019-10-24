@@ -10,6 +10,7 @@
 - name: Upgrade all packages to the latest version
   become: yes
   apt:
+    force_apt_get: True
     name: "*"
     state: latest
 
@@ -18,9 +19,10 @@
   apt:
     state: present
     pkg:
+      - sshpass
+      - aptitude
       - build-essential
       #- ansible
-      - firmware-iwlwifi
       - xrdp
       - dirmngr
       - apt-transport-https
@@ -64,6 +66,7 @@
       - silversearcher-ag
       - tmux
       - snapd
+      - curl
       - libcurl4-openssl-dev
       - libxml2-dev
       - libssl-dev

@@ -2,13 +2,13 @@
 
 - hosts: all
   roles:
-    - google-cloud
     - common
     - dotfiles
     - { role: m4rcu5nl.zerotier-one, become: true }
 
 - hosts: workstations
   roles:
+    - { role: rvm.ruby, ignore_errors: yes, when: ansible_distribution != "MacOSX" }
     - ssh
     - node
     - { role: debian, when: ansible_os_family == "Debian" }
@@ -16,9 +16,9 @@
     - { role: x11, when: ansible_distribution != "MacOSX" }
     - { role: xfce, when: ansible_distribution != "MacOSX" }
     - { role: i3-gaps, when: ansible_distribution != "MacOSX" }
-    #- { role: rvm.ruby, when: ansible_distribution != "MacOSX" }
     - { role: geerlingguy.docker, become: true }
-    - { role: kubectl, become: true }
+    - { role: kubectl, ignore_errors: yes, become: true }
     - R
     - vscode
     - z
+    #- google-cloud
