@@ -6,3 +6,4 @@ all:
         localhost:
           ansible_connection: local
         # 10.147.17.139:
+        # 192.168.1.125:
