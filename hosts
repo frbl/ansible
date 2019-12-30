@@ -2,7 +2,7 @@ all:
   children:
     workstations:
       hosts:
-        192.168.1.125:
-        #localhost:
-        #  ansible_connection: local
+        #192.168.1.125:
+        localhost:
+          ansible_connection: local
         # 10.147.17.139:

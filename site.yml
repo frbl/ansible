@@ -11,6 +11,7 @@
     - { role: rvm.ruby, ignore_errors: yes, when: ansible_distribution != "MacOSX" }
     - ssh
     - node
+    - insync
     - { role: debian, when: ansible_os_family == "Debian" }
     - { role: osx, when: ansible_distribution == "MacOSX" }
     - { role: x11, when: ansible_distribution != "MacOSX" }
