@@ -34,11 +34,17 @@
       - bridge-utils
       - virt-top
     state: present
-
+    
 - name: Add the vhost_net module
   become: yes
   modprobe:
     name: vhost_net
+    state: present
+
+- name: Add the fuse module
+  become: yes
+  modprobe:
+    name: fuse
     state: present
 
 - name: Insert a line at the end of a file.
@@ -59,4 +65,19 @@
     url: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
     dest: "/usr/local/bin/minikube"
     mode: '0744'
+
+- name: Add the grub config
+  register: grubchanged
+  become: yes
+  lineinfile:
+    state: present
+    dest: /etc/default/grub
+    backrefs: yes
+    regexp: '^(GRUB_CMDLINE_LINUX=(?!.*intel_iommu)\"[^\"]*)(\".*)'
+    line: '\1 intel_iommu=on\2'
+
+- name: Generate new grub config
+  become: yes
+  when: grubchanged is succeeded
+  shell: "grub-mkconfig -o /boot/grub/grub.cfg"
 
