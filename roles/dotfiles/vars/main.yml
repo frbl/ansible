@@ -1,4 +1,0 @@
----
-
-dotfiles_git_path: "{{ lookup('env','HOME') }}/.cache/dotfiles"
-dotfiles_git_url: https://git@github.com/frbl/dotfiles.git

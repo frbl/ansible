@@ -3,7 +3,7 @@
 - name: install key (apt)
   become: yes
   apt_key:
-    url: ' https://dl.yarnpkg.com/debian/pubkey.gpg'
+    url: 'https://dl.yarnpkg.com/debian/pubkey.gpg'
     state: present
 
 - name: install yarn repo (apt)
