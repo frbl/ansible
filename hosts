@@ -4,4 +4,5 @@ all:
       hosts:
         localhost:
           ansible_connection: local
+        #192.168.1.27:
         10.147.17.139:

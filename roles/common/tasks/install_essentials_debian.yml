@@ -20,6 +20,8 @@
     pkg:
       - build-essential
       #- ansible
+      - maven
+      - curl
       - xrdp
       - dirmngr
       - apt-transport-https

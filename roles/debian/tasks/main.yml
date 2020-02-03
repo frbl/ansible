@@ -28,7 +28,6 @@
     recursive: True
     update: True
     depth: 1
-    
 
 - name: Increasing the amount of inotify watchers
   become: yes
