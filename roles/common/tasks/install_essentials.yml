@@ -9,6 +9,7 @@
     pkg:
       - sudo
 
+
 - name: Make sure we have a 'wheel' group
   become: yes
   become_method: su
@@ -37,7 +38,18 @@
 - name: reset ssh connection to allow user changes to affect 'current login user'
   meta: reset_connection
 
-- name: turn off sleep
+- name: turn on sleep
   when: ansible_os_family == "Debian"
   become: yes
-  command: "systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target"
+  command: "systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target"
+
+- name: ensure dirs have the correct owners
+  become: true
+  file:
+    path: "{{ item }}"
+    state: directory 
+    owner: "{{ user_name }}"
+    group: "wheel"
+  with_items:
+    - /var/lib/gems
+    - /usr/local/bin

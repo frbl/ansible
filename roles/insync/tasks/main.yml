@@ -1,0 +1,27 @@
+---
+- name: install dependencies (apt)
+  become: yes
+  apt:
+    name:
+      - apt-transport-https
+    state: present
+
+- name: Add an apt key by id from a keyserver
+  become: yes
+  apt_key:
+    keyserver: hkp://keyserver.ubuntu.com:80
+    id: ACCAF35C
+
+- name: install insync repo (apt)
+  become: yes
+  apt_repository:
+    repo: deb http://apt.insync.io/debian stretch non-free contrib
+    filename: insync
+    state: present
+
+- name: install insync (apt)
+  become: yes
+  apt:
+    update_cache: yes
+    name: insync
+    state: present

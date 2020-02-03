@@ -1,0 +1,35 @@
+---
+- name: install dependencies (apt)
+  become: yes
+  apt:
+    name:
+      - apt-transport-https
+    state: present
+
+- name: install java8 repo (apt)
+  become: yes
+  apt_repository:
+    repo: deb http://ftp.us.debian.org/debian sid main
+    filename: java8-deb
+    state: present
+
+- name: install java8 repo (apt)
+  become: yes
+  apt_repository:
+    repo: deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main
+    filename: java8
+    state: absent
+
+- name: install java8-src repo (apt)
+  become: yes
+  apt_repository:
+    repo: deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main
+    filename: java8-src
+    state: absent
+
+- name: install java8 (apt)
+  become: yes
+  apt:
+    update_cache: yes
+    name: openjdk-8-jdk
+    state: present

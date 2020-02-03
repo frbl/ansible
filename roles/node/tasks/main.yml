@@ -3,7 +3,7 @@
 - name: install key (apt)
   become: yes
   apt_key:
-    url: ' https://dl.yarnpkg.com/debian/pubkey.gpg'
+    url: 'https://dl.yarnpkg.com/debian/pubkey.gpg'
     state: present
 
 - name: install yarn repo (apt)
@@ -14,9 +14,15 @@
     state: present
 
 - name: nvm
-  shell: >
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+  get_url:
+    url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh
+    mode: '0755'
+    dest: /tmp/install_node.sh
+
+- name: install nvm
+  shell: "/tmp/install_node.sh"
   args:
+    executable: /bin/bash
     creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
 
 - name: latest node
