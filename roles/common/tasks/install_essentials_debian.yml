@@ -23,6 +23,7 @@
       - aptitude
       - build-essential
       #- ansible
+      - apache2-utils
       - xrdp
       - dirmngr
       - apt-transport-https

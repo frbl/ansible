@@ -2,7 +2,6 @@
 
 - hosts: all
   roles:
-    - minikube
     - common
     - dotfiles
     - { role: m4rcu5nl.zerotier-one, become: true }
@@ -26,3 +25,6 @@
     - vscode
     - z
     #- google-cloud
+- hosts: rug
+  roles:
+    - minikube
