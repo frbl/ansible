@@ -23,7 +23,13 @@
       - aptitude
       - build-essential
       #- ansible
+<<<<<<< HEAD
       - apache2-utils
+||||||| merged common ancestors
+=======
+      - maven
+      - curl
+>>>>>>> 2d2bc8a58aabf6319fb60d25967529c4c47c7ec5
       - xrdp
       - dirmngr
       - apt-transport-https
