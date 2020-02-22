@@ -3,10 +3,9 @@
 - hosts: all
   roles:
     - sbt
-    - minikube
     - common
-    - dotfiles
-    - { role: m4rcu5nl.zerotier-one, become: true }
+    - { role: dotfiles, become: false }
+    - { role: m4rcu5nl.zerotier-one, become: true, ignore_errors: yes }
     #- owncloud
 
 - hosts: workstations
@@ -27,3 +26,6 @@
     - vscode
     - z
     #- google-cloud
+- hosts: rug
+  roles:
+    - minikube

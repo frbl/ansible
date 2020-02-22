@@ -2,10 +2,12 @@
 
 - name: setup dotfiles symlinks
   command: ./install_symlinks.sh
+  become: no
   args:
     chdir: "{{ dotfiles_git_path }}"
 
 - name: setup dotfiles repositories
   command: ./install_repositories.sh
+  become: no
   args:
     chdir: "{{ dotfiles_git_path }}"

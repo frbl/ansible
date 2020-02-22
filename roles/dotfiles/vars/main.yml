@@ -1,0 +1,4 @@
+---
+
+dotfiles_git_path: "{{ansible_env.HOME}}/.cache/dotfiles"
+dotfiles_git_url: https://git@github.com/frbl/dotfiles.git
