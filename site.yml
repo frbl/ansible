@@ -1,9 +1,9 @@
 ---
-
 - hosts: all
   roles:
-    - sbt
     - common
+    - tizen
+    - kvm
     - { role: dotfiles, become: false }
     - { role: m4rcu5nl.zerotier-one, become: true, ignore_errors: yes }
     #- owncloud
@@ -29,3 +29,4 @@
 - hosts: rug
   roles:
     - minikube
+    - sbt

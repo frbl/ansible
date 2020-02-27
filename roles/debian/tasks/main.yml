@@ -28,10 +28,6 @@
     recursive: True
     update: True
     depth: 1
-<<<<<<< HEAD
-||||||| merged common ancestors
-    
-=======
 
 - name: add contrib and non-free
   become: yes
@@ -39,7 +35,6 @@
     state: present
     filename: nonfree
     repo: deb http://ftp.us.debian.org/debian/ buster main contrib non-free
->>>>>>> c1431869cb1c6eeecf6e6757e50399987a1d6896
 
 - name: Increasing the amount of inotify watchers
   become: yes

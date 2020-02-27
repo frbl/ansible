@@ -23,13 +23,9 @@
       - aptitude
       - build-essential
       #- ansible
-<<<<<<< HEAD
       - apache2-utils
-||||||| merged common ancestors
-=======
       - maven
       - curl
->>>>>>> 2d2bc8a58aabf6319fb60d25967529c4c47c7ec5
       - xrdp
       - dirmngr
       - apt-transport-https
@@ -43,7 +39,6 @@
       - latexmk 
       - tree
       - nmap
-      - ctags
       - gconf2
       - poppler-utils
       - pdftk
@@ -78,6 +73,7 @@
       - libcurl4-openssl-dev
       - libxml2-dev
       - libssl-dev
+      - libssl1.1
       - net-tools
       - patch
       - ruby-dev

@@ -5,12 +5,7 @@ all:
         #192.168.1.125:
         localhost:
           ansible_connection: local
-<<<<<<< HEAD
         #192.168.1.27:
         10.147.17.139:
-||||||| merged common ancestors
-        10.147.17.139:
-=======
         # 10.147.17.139:
         # 192.168.1.125:
->>>>>>> c1431869cb1c6eeecf6e6757e50399987a1d6896

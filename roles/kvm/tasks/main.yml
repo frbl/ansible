@@ -1,0 +1,62 @@
+---
+- name: install dependencies (apt)
+  become: yes
+  apt:
+    name:
+      - apt-transport-https
+    state: present
+
+- name: Make sure we have a 'libvrt' group
+  become: yes
+  become_method: su
+  become_user: root
+  group:
+    name: libvirt
+    state: present
+
+- name: set up user groups
+  become: yes
+  user:
+    append: yes
+    groups: libvirt
+    name: '{{ansible_user_id}}'
+
+- name: install kvm (apt)
+  become: yes
+  apt:
+    name:
+      - libvirt-daemon
+      - libosinfo-bin
+      - libguestfs-tools
+      - libvirt-daemon-system
+      - qemu-kvm
+      - virtinst
+      - bridge-utils
+      - virt-top
+      - virt-manager
+    state: present
+    
+- name: Add the vhost_net module
+  become: yes
+  modprobe:
+    name: vhost_net
+    state: present
+
+- name: Add the fuse module
+  become: yes
+  modprobe:
+    name: fuse
+    state: present
+
+- name: Insert a line at the end of a file.
+  become: yes
+  lineinfile:
+    path: /etc/modules
+    line: vhost_net
+    state: present
+
+- name: Verify KVM module is loaded
+  become: yes
+  shell: "lsmod | grep vhost"
+  register: result
+  failed_when: "result.rc != 0"

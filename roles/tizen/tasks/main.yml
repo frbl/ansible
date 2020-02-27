@@ -1,0 +1,28 @@
+---
+- name: install dependencies
+  become: yes
+  apt:
+    state: present
+    pkg:
+      - acl
+      - bridge-utils
+      - openvpn
+      - libfontconfig1
+      - libglib2.0-0
+      - libjpeg62-turbo
+      - libpixman-1-0
+      - libpng16-16
+      - libsdl1.2debian
+      - libsm6
+      - libv4l-0
+      - libx11-xcb1
+      - libxcb-icccm4
+      - libxcb-image0
+      - libxcb-randr0
+      - libxcb-render-util0
+      - libxcb-shape0
+      - libxcb-xfixes0
+      - libxi6
+      - libwebkit2gtk-4.0-37
+      - cpio 
+      - rpm2cpio
