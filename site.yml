@@ -2,20 +2,19 @@
 - hosts: all
   roles:
     - common
-    - tizen
-    - kvm
-    - { role: dotfiles, become: false }
-    - { role: m4rcu5nl.zerotier-one, become: true, ignore_errors: yes }
+    - { role: geerlingguy.docker, become: true }
+    - { role: dotfiles }
     #- owncloud
 
 - hosts: workstations
   roles:
+    - kvm
     - { role: rvm.ruby, ignore_errors: yes, when: ansible_distribution != "MacOSX" }
+    - { role: m4rcu5nl.zerotier-one, become: true, ignore_errors: yes }
     - java
     - ssh
     - node
     - insync
-    - { role: geerlingguy.docker, become: true }
     - { role: debian, when: ansible_os_family == "Debian" }
     - { role: osx, when: ansible_distribution == "MacOSX" }
     - { role: x11, when: ansible_distribution != "MacOSX" }
