@@ -2,13 +2,13 @@
 - hosts: all
   roles:
     - common
-    - { role: geerlingguy.docker, become: true }
     - { role: dotfiles }
     #- owncloud
 
 - hosts: workstations
   roles:
     # - kvm
+    - { role: geerlingguy.docker, become: true, vars: {docker_users: ['{{ansible_user_id}}']} }
     - { role: rvm.ruby, ignore_errors: yes, when: ansible_distribution != "MacOSX" }
     # - { role: m4rcu5nl.zerotier-one, become: true, ignore_errors: yes }
     # - java

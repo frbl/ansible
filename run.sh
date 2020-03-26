@@ -7,11 +7,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 else
   if [ $(dpkg-query -W -f='${Status}' ansible 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
     ./bin/bootstrap_debian
-    ansible-galaxy install geerlingguy.docker
   fi
 fi
 
-ansible-galaxy install --roles-path . geerlingguy.docker
+ansible-galaxy install --roles-path ./roles -r requirements.yml
 
 #ansible workstations -m ping -i hosts --ask-pass --extra-vars "ansible_python_interpreter=/usr/bin/python3"
 #ansible-playbook --ask-pass -K -i hosts site.yml
