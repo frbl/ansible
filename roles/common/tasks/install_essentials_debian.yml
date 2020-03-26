@@ -31,6 +31,7 @@
       - apt-transport-https
       - owncloud-client
       - figlet
+      - fzf
       - htop
       - pandoc
       - pandoc-citeproc

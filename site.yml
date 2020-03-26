@@ -8,13 +8,11 @@
 
 - hosts: workstations
   roles:
-    - kvm
+    # - kvm
     - { role: rvm.ruby, ignore_errors: yes, when: ansible_distribution != "MacOSX" }
-    - { role: m4rcu5nl.zerotier-one, become: true, ignore_errors: yes }
-    - java
+    # - { role: m4rcu5nl.zerotier-one, become: true, ignore_errors: yes }
+    # - java
     - ssh
-    - node
-    - insync
     - { role: debian, when: ansible_os_family == "Debian" }
     - { role: osx, when: ansible_distribution == "MacOSX" }
     - { role: x11, when: ansible_distribution != "MacOSX" }
@@ -24,6 +22,8 @@
     - R
     - vscode
     - z
+    - node
+    - insync
     #- google-cloud
 - hosts: rug
   roles:
