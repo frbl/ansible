@@ -19,6 +19,7 @@
   apt:
     state: present
     pkg:
+      - libgsl-dev
       - sshpass
       - aptitude
       - build-essential
