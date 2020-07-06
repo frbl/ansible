@@ -16,5 +16,5 @@ ansible-galaxy install --roles-path ./roles -r requirements.yml
 #ansible-playbook --ask-pass -K -i hosts site.yml
 #ansible-playbook -vvv -K -i hosts site.yml
 #ansible-playbook -K -k -i hosts site.yml -f 2
-ansible-playbook -K -i hosts site.yml -f 2
+ansible-playbook -vvv -K -i hosts site.yml -f 2
 #ansible-playbook -i hosts site.yml -f 2

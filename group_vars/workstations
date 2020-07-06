@@ -1,3 +1,4 @@
 ---
 zerotier_network_id: 0cccb752f74b8c5e
 zerotier_register_short_hostname: false
+docker_users: ['{{ansible_user_id}}'] 

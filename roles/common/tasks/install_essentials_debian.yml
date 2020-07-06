@@ -22,6 +22,7 @@
       - sshpass
       - aptitude
       - build-essential
+      - resolvconf
       #- ansible
       - apache2-utils
       - maven
