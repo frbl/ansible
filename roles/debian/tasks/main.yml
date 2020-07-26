@@ -29,6 +29,16 @@
     update: True
     depth: 1
 
+- name: Cloning zsh autosuggestions
+  git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    clone: True
+    force: True
+    recursive: True
+    update: True
+    depth: 1
+
 - name: add contrib and non-free
   become: yes
   apt_repository:
