@@ -19,6 +19,7 @@
   apt:
     state: present
     pkg:
+      - mailutils
       - libgsl-dev
       - sshpass
       - aptitude
