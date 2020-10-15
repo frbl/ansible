@@ -9,10 +9,10 @@
       - task-xfce-desktop
       - gdm3
 
-#- name: restart login manager service
-  #when: ansible_os_family == "Debian"
-  #become: yes
-  #service: name="gdm" state="restarted"
+- name: restart login manager service
+  when: ansible_os_family == "Debian"
+  become: yes
+  service: name="gdm" state="restarted"
 
 - name: Create a directory if it does not exist
   file:
