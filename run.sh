@@ -11,6 +11,7 @@ else
 fi
 
 ansible-galaxy install --roles-path ./roles -r requirements.yml
+ansible-galaxy collection install community.general --ignore-errors
 
 #ansible workstations -m ping -i hosts --ask-pass --extra-vars "ansible_python_interpreter=/usr/bin/python3"
 #ansible-playbook --ask-pass -K -i hosts site.yml
