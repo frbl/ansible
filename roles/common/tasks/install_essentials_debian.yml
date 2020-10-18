@@ -94,14 +94,14 @@
       # - libxslt-dev libxml2-dev libvirt-dev zlib1g-dev ruby-dev \
 
 - name: Install slack
-  snap:
+  ignore_errors: yes
+  community.general.snap:
     name: slack
     classic: yes
     state: present
 
 - name: Install postman
-  snap:
-    name: postman
-    classic: no
-    state: present
-
+  ignore_errors: yes
+  community.general.snap:
+    name: 
+      - postman

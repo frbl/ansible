@@ -51,6 +51,7 @@
   command: "echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p"
 
 - name: Create resolv conf head
+  become: yes
   copy:
     dest: "/etc/resolvconf/resolv.conf.d/head"
     content: |
