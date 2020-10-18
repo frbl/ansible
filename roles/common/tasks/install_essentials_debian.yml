@@ -19,6 +19,7 @@
   apt:
     state: present
     pkg:
+      - neovim
       - mailutils
       - libgsl-dev
       - sshpass
