@@ -1,0 +1,20 @@
+---
+- name: install lutris key (apt)
+  become: yes
+  apt_key:
+    url: 'https://download.opensuse.org/repositories/home:/strycore/Debian_10/Release.key'
+    state: present
+
+- name: install lutris repo (apt)
+  become: yes
+  apt_repository:
+    repo: deb http://download.opensuse.org/repositories/home:/strycore/Debian_10/ ./
+    filename: lutris
+    state: present
+
+- name: install lutris (apt)
+  become: yes
+  apt:
+    update_cache: yes
+    name: lutris
+    state: present

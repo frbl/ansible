@@ -1,4 +1,11 @@
 ---
+- name: set codename
+  shell: lsb_release -sc
+  register: codename
+
+- name: Distribution major version
+  debug: msg="{{ codename.stdout }}"
+
 - name: Cleanup and update
   become: yes
   apt:
@@ -22,6 +29,8 @@
       - neovim
       - mailutils
       - libgsl-dev
+      - scrot
+      - xautolock
       - sshpass
       - aptitude
       - build-essential
@@ -87,21 +96,29 @@
       - chromium
       - chromium-driver
       - nfs-kernel-server
+      - fail2ban
       #- signal-desktop
       #- code
       #- owncloud-client
       # - build-dep vagrant ruby-libvirt \
       # - libxslt-dev libxml2-dev libvirt-dev zlib1g-dev ruby-dev \
 
-- name: Install slack
-  ignore_errors: yes
-  community.general.snap:
-    name: slack
-    classic: yes
-    state: present
+# Enable fail2ban
+- name: Enable fail2ban
+  systemd:
+    state: started
+    enabled: yes
+    name: fail2ban
 
-- name: Install postman
-  ignore_errors: yes
-  community.general.snap:
-    name: 
-      - postman
+#- name: Install slack
+  #ignore_errors: yes
+  #community.general.snap:
+    #name: slack
+    #classic: yes
+    #state: present
+
+#- name: Install postman
+  #ignore_errors: yes
+  #community.general.snap:
+    #name: 
+      #- postman

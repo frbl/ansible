@@ -18,4 +18,4 @@ ansible-galaxy collection install community.general --ignore-errors
 #ansible-playbook -vvv -K -i hosts site.yml
 #ansible-playbook -vvv -K -k -i hosts site.yml -f 2
 ansible-playbook -vvv -K -i hosts site.yml -f 2
-#ansible-playbook -i hosts site.yml -f 2
+#ansible-playbook -vvv -i hosts site.yml -f 2

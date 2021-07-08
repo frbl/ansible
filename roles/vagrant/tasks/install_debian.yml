@@ -1,0 +1,31 @@
+---
+- name: set codename
+  shell: lsb_release -sc
+  register: codename
+
+- name: install dependencies (apt)
+  become: yes
+  apt:
+    name:
+      - rsync
+    state: present
+
+- name: install key (apt)
+  become: yes
+  apt_key:
+    url: 'https://apt.releases.hashicorp.com/gpg'
+    state: present
+
+- name: install vagrant repo (apt)
+  become: yes
+  apt_repository:
+    repo: deb [arch=amd64] https://apt.releases.hashicorp.com {{codename.stdout}} main
+    filename: vagrant
+    state: present
+
+- name: install vagrant
+  become: yes
+  apt:
+    update_cache: yes
+    name: vagrant
+    state: present
