@@ -3,9 +3,6 @@
   shell: lsb_release -sc
   register: codename
 
-- name: Distribution major version
-  debug: msg="{{ codename.stdout }}"
-
 - name: Cleanup and update
   become: yes
   apt:
