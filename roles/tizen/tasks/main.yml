@@ -26,3 +26,14 @@
       - libwebkit2gtk-4.0-37
       - cpio 
       - rpm2cpio
+
+- name: Download Tizen IDE
+  get_url:
+    url: http://download.tizen.org/sdk/Installer/tizen-studio_4.1.1/web-ide_Tizen_Studio_4.1.1_ubuntu-64.bin
+    dest: /tmp/tizen.bin
+    mode: +x
+
+- name: Run tizen installer
+  shell: /tmp/tizen.bin
+  args: 
+    creates: "{{ansible_env.HOME}}/tizen-studio"
